@@ -2,17 +2,38 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Eline's Portfolio</title>
+    <link rel="stylesheet" href="style.css" >
+    <script src="https://kit.fontawesome.com/2860c3ed1f.js" crossorigin="anonymous"></script>
+
     <script src="script.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <div w3-include-html="header.html"></div>
+    <div w3-include-html="footer.html"></div>
+    <script>w3.includeHTML();</script>  
   </head>
   <body>
-    <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click <a href="/hello">here</a> to see content created by server code.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
+    <div class="row">
+         <div id="content">
+             <img class="back-pic" src="images/eean.png" />
+         </div>
+    </div>
+   
+    <div id="text">
+        <h1>About Me</h1>
+        <p>My name is Eline-Elorm Awo Nuviadenu. I am a 3rd year student at Carleton
+            University, majoring in Computer Systems Engineering. </p>
+        <p> I have a very bubbly personality, and I love to meet and work with new people. I love
+            learning new things and picking up new skills, particularly in the field
+            of User Interfaces and Web Development. </p>
+        <p> In my free time, you can either find me playing an instrument, reading, watching movies, swimming, 
+            listening to music, taking pictures, or playing sudoku. I have a wide range of interests :) </p>
+    </div>
+
+    <div id="fact-gen">
+        <h2>Click here to get a random fact about me</h2>
+      <button id="button" onclick="addRandomGreeting()">Here</button>
       <div id="greeting-container"></div>
     </div>
   </body>
