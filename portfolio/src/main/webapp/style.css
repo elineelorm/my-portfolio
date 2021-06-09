@@ -93,6 +93,13 @@ li {
     position: relative;
 }
 
+#message-container {
+    font-family: cursive;
+    margin-left: 5%;
+    margin-top: 20px;
+    padding-bottom: 100px;     
+}
+
 @media (max-width: 800px){
     #main-list .row-project1 {
         display: block;
