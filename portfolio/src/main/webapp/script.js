@@ -31,7 +31,7 @@ function addRandomGreeting() {
   greetingContainer.innerText = greeting;
 }
 
-async function addMotivationalMessage(){
+async function addMotivationalMessage() {
   const responseFromServer = await fetch('/hello');
   const textFromResponse = await responseFromServer.text();
 
