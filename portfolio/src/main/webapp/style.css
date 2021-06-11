@@ -18,7 +18,7 @@ body {
     margin-right: 20px;
 }
 
-#button {
+#button, #get-message-button {
     margin-left: 25%;
 }
 
@@ -91,6 +91,13 @@ li {
     grid-template-columns: 30% 1fr 100px;
     margin: 0 0 2px;
     position: relative;
+}
+
+#message-container {
+    font-family: cursive;
+    margin-left: 5%;
+    margin-top: 20px;
+    padding-bottom: 100px;     
 }
 
 @media (max-width: 800px){
