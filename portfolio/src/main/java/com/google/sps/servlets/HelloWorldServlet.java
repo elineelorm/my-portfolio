@@ -1,12 +1,10 @@
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
-
-import com.google.gson.Gson;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,13 +15,13 @@ import javax.servlet.http.HttpServletResponse;
 public final class HelloWorldServlet extends HttpServlet {
 
   private static final ArrayList<String> MOTIVATIONS = new ArrayList<String>(Arrays.asList(
-                "If at first you do not succeed, try again!", "Yes you can!", "If it was easy, everyone would do it!"));
+                "If at first you do not succeed, try again!", "Yes you can!",
+                 "If it was easy, everyone would do it!"));
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
     String string = getRandom(MOTIVATIONS);
-
     String json = convertToJson(string);
 
     response.setContentType("application/json;");
