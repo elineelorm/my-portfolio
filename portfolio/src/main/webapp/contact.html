@@ -11,7 +11,13 @@
     <script>w3.includeHTML();</script>
   </head>
   <body>
-
-        <h1>Coming Soon!</h1>
+      <div id="respond">
+        <h3 id="comment-title">Leave me a message:</h3>
+        <form action="/form-handler" method="POST" id="commentform">
+        <textarea name="text-input">type your message here!</textarea>
+        <br/>
+        <input id="submit" type="submit" />
+        </form>
     </div>
+  </body>
 </html>

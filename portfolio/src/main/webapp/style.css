@@ -13,7 +13,7 @@
 body {
     background-color: black;
     color: white;
-    font-family: cursive;
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;;
     margin-left: 40px;
     margin-right: 20px;
 }
@@ -47,7 +47,7 @@ body {
 }
 
 #greeting-container {
-    font-family: cursive;
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;;
     margin-left: 5%;
     margin-top: 20px;
     padding-bottom: 100px;     
@@ -62,14 +62,14 @@ body {
 }
 
 h1 {
-    font-family: cursive;
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;;
     font-size: 75px;
     font-weight: 700;
     margin-left: 16%;
 }
 
 h2{
-    font-family: cursive;
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;;
     font-size: 30px;
     font-weight: 100;
     margin-left: 5%;
@@ -94,7 +94,7 @@ li {
 }
 
 #message-container {
-    font-family: cursive;
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;
     margin-left: 5%;
     margin-top: 20px;
     padding-bottom: 100px;     
@@ -121,7 +121,7 @@ li {
 }
 
 #navbar {
-    font-family: cursive; 
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;; 
     list-style-type: none;  
     overflow: hidden;
     text-align: center;
@@ -185,7 +185,7 @@ ol {
 }
 
 #text {
-    font-family: cursive;
+    font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;;
 }
 
 :root {
