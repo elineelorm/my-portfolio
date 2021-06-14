@@ -37,9 +37,9 @@ async function addMotivationalMessage() {
     
   const messageContainer = document.getElementById('message-container'); 
   messageContainer.innerHTML = '';
-  
-  messageContainer.appendChild(createListElement(textFromResponse[0]));
-  
+  messageContainer.appendChild(
+      createListElement(textFromResponse[0])
+      );
 }
 
 function createListElement(text){

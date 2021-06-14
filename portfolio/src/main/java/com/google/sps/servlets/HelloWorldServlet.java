@@ -16,13 +16,13 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/hello")
 public final class HelloWorldServlet extends HttpServlet {
 
+  private static final ArrayList<String> MOTIVATIONS = new ArrayList<String>(Arrays.asList(
+                "If at first you do not succeed, try again!", "Yes you can!", "If it was easy, everyone would do it!"));
+
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    
-    ArrayList<String> motivations = new ArrayList<String>(Arrays.asList("If at first you do not succeed, try again!", 
-  "Yes you can!", "If it was easy, everyone would do it!"));
 
-    String string = getRandom(motivations);
+    String string = getRandom(MOTIVATIONS);
 
     String json = convertToJson(string);
 
