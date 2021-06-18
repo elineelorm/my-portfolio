@@ -47,3 +47,40 @@ function createListElement(text){
     liElement.innerText = text;
     return liElement;
 }
+
+function loadTasks() {
+  fetch('/list-tasks').then(response => response.json()).then((tasks) => {
+    const taskListElement = document.getElementById('task-list');
+    tasks.forEach((task) => {
+      taskListElement.appendChild(createTaskElement(task));
+    })
+  });
+}
+
+function createTaskElement(task) {
+  const taskElement = document.createElement('li');
+  taskElement.className = 'task';
+
+  const titleElement = document.createElement('span');
+  titleElement.innerText = task.title;
+
+  const deleteButtonElement = document.createElement('button');
+  deleteButtonElement.innerText = 'Delete';
+  deleteButtonElement.addEventListener('click', () => {
+    deleteTask(task);
+
+    taskElement.remove();
+  });
+
+  taskElement.appendChild(titleElement);
+  taskElement.appendChild(deleteButtonElement);
+  return taskElement;
+}
+
+
+function deleteTask(task) {
+  const params = new URLSearchParams();
+  params.append('id', task.id);
+  fetch('/delete-task', {method: 'POST', body: params});
+}
+

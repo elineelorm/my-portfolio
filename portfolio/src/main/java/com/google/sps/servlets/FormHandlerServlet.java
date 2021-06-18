@@ -10,6 +10,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.jsoup.Jsoup;
+import org.jsoup.safety.Whitelist;
 
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
@@ -19,11 +21,11 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    String name = request.getParameter("name"); 
-    String textValue = request.getParameter("text-input");
+    String name = Jsoup.clean(request.getParameter("name"), Whitelist.none()); 
+    String textValue = Jsoup.clean(request.getParameter("text-input"), Whitelist.none());
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Tasks");
     FullEntity textEntity =
         Entity.newBuilder(keyFactory.newKey())
             .set("name", name)
