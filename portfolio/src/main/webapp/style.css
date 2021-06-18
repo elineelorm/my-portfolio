@@ -312,3 +312,51 @@ clip-path: polygon(50% 0%, 95% 25%, 95% 75%, 50% 100%, 5% 75%, 5% 25%);
     top:82px;
   }
 }
+
+#respond {
+    background: #434343;
+    border-radius: 8px;
+    display: block;
+    padding: 2rem;
+}
+
+#comment-title {
+    box-sizing: border-box;
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin: 0 0 1.5rem;
+    margin-block-end: 1em;
+    margin-block-start: 1em;
+    margin-inline-end: 0px;
+    margin-inline-start: 0px;
+}
+
+label {
+    box-sizing: border-box;
+    cursor: default;
+    display: block;
+}
+
+textarea {
+    border-radius: 4px;
+    width: 100%;
+}
+
+#submit {
+    align-items: flex-start;
+    background-color: #5e5e5e!important;
+    border: 0;
+    border-radius: 4px!important;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    font-weight: 700;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+.form-submit {
+    text-align: right;
+}

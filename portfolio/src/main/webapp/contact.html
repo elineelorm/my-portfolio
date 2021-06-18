@@ -14,9 +14,21 @@
       <div id="respond">
         <h3 id="comment-title">Leave me a message:</h3>
         <form action="/form-handler" method="POST" id="commentform">
-        <textarea name="text-input">type your message here!</textarea>
-        <br/>
-        <input id="submit" type="submit" />
+            <label for="author">
+                Name 
+                <span class="required">*</span>
+            </label>
+            <textarea name="name" placeholder="type your name here!"></textarea>
+            <br/>
+            <label for="comment">
+                Message 
+                <span class="required">*</span>
+            </label>
+            <textarea name="text-input" placeholder="type your message here!"></textarea>
+            <br/>
+            <p class="form-submit">
+                <input id="submit" type="submit" />
+            </p>
         </form>
     </div>
   </body>
