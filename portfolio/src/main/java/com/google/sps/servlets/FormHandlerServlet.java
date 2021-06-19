@@ -21,10 +21,19 @@ public class FormHandlerServlet extends HttpServlet {
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-    String name = Jsoup.clean(request.getParameter("name"), Whitelist.none()); 
-    String textValue = Jsoup.clean(request.getParameter("text-input"), Whitelist.none());
+    
+    String name = request.getParameter("name"); 
+    String textValue = request.getParameter("text-input");
 
-    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+    writeToDatastore(name, textValue);
+
+    System.out.println(name + " submitted: " + textValue);
+    response.getWriter().println(name + " submitted: " + textValue);
+    response.sendRedirect(REDIRECT_URL);
+  }
+
+  public void writeToDatastore(String name, String textValue){
+     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("Tasks");
     FullEntity textEntity =
         Entity.newBuilder(keyFactory.newKey())
@@ -32,9 +41,5 @@ public class FormHandlerServlet extends HttpServlet {
             .set("text-input", textValue)
             .build();
     datastore.put(textEntity);
-
-    System.out.println(name + " submitted: " + textValue);
-    response.getWriter().println(name + " submitted: " + textValue);
-    response.sendRedirect(REDIRECT_URL);
   }
 }

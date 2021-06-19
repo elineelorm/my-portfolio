@@ -48,39 +48,27 @@ function createListElement(text){
     return liElement;
 }
 
-function loadTasks() {
-  fetch('/list-tasks').then(response => response.json()).then((tasks) => {
-    const taskListElement = document.getElementById('task-list');
-    tasks.forEach((task) => {
-      taskListElement.appendChild(createTaskElement(task));
-    })
-  });
+async function loadTasks() {
+    const responseFromServer = await fetch('/list-messages');
+    const textFromResponse = await responseFromServer.json();
+   
+    const taskListElement = document.getElementById('lists-container');
+    taskListElement.innerHTML = '';    
+
+    for (let i = 0; i < textFromResponse.length; i++){
+        taskListElement.appendChild(
+            createTaskElement(textFromResponse[i])
+        );
+    }
 }
 
-function createTaskElement(task) {
+function createTaskElement(tasks) {
   const taskElement = document.createElement('li');
-  taskElement.className = 'task';
+  taskElement.className = 'tasks';
 
   const titleElement = document.createElement('span');
-  titleElement.innerText = task.title;
-
-  const deleteButtonElement = document.createElement('button');
-  deleteButtonElement.innerText = 'Delete';
-  deleteButtonElement.addEventListener('click', () => {
-    deleteTask(task);
-
-    taskElement.remove();
-  });
+  titleElement.innerText = tasks.title;
 
   taskElement.appendChild(titleElement);
-  taskElement.appendChild(deleteButtonElement);
   return taskElement;
 }
-
-
-function deleteTask(task) {
-  const params = new URLSearchParams();
-  params.append('id', task.id);
-  fetch('/delete-task', {method: 'POST', body: params});
-}
-

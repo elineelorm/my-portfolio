@@ -37,17 +37,21 @@ public class ListMessagesServlet extends HttpServlet {
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
-        Query.newEntityQueryBuilder().setKind("Tasks").setOrderBy(OrderBy.asc("name")). build();
+        Query.newEntityQueryBuilder().setKind("Tasks"). build();
     QueryResults<Entity> results = datastore.run(query);
 
     List<Tasks> messages = new ArrayList<>();
+    if (results == null){
+        Tasks message = new Tasks("n/a", "n/a");
+        messages.add(message);
+    }
     while (results.hasNext()) {
       Entity entity = results.next();
 
       String name = entity.getString("name");
-      String text = entity.getString("text");
+      String textValue = entity.getString("text-input");
 
-      Tasks message = new Tasks(name, text);
+      Tasks message = new Tasks(name, textValue);
       messages.add(message);
     }
 
