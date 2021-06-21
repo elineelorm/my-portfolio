@@ -18,7 +18,7 @@ body {
     margin-right: 20px;
 }
 
-#button, #get-message-button {
+#button, #get-message-button, #get-messages-button{
     margin-left: 25%;
 }
 
@@ -46,7 +46,7 @@ body {
     position: fixed;
 }
 
-#greeting-container {
+#greeting-container, #lists-container {
     font-family: Gotham Narrow SSm A,Gotham Narrow SSm B,Rubik,Lato,Lucida Grande,Lucida Sans Unicode,Tahoma,Sans-Serif;;
     margin-left: 5%;
     margin-top: 20px;
@@ -359,4 +359,8 @@ textarea {
 
 .form-submit {
     text-align: right;
+}
+
+.tasks span {
+  flex-grow: 1;
 }
