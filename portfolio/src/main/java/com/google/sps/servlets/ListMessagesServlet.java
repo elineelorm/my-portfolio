@@ -35,7 +35,15 @@ public class ListMessagesServlet extends HttpServlet {
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
+   
+    Gson gson = new Gson();
+
+    response.setContentType("application/json;");
+    response.getWriter().println(gson.toJson(readMessagesFromDatastore()));
+  }
+
+  public List readMessagesFromDatastore() {
+     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
     Query<Entity> query =
         Query.newEntityQueryBuilder().setKind("Tasks"). build();
     QueryResults<Entity> results = datastore.run(query);
@@ -54,10 +62,6 @@ public class ListMessagesServlet extends HttpServlet {
       Tasks message = new Tasks(name, textValue);
       messages.add(message);
     }
-
-    Gson gson = new Gson();
-
-    response.setContentType("application/json;");
-    response.getWriter().println(gson.toJson(messages));
+    return messages;
   }
 }
