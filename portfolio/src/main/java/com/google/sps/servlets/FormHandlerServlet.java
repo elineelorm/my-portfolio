@@ -16,7 +16,8 @@ import org.jsoup.safety.Whitelist;
 @WebServlet("/form-handler")
 public class FormHandlerServlet extends HttpServlet {
 
-  private static final String REDIRECT_URL = "https://enuviadenu-sps-summer21.uc.r.appspot.com/contact.html";
+  private static final String REDIRECT_URL =
+   "https://enuviadenu-sps-summer21.uc.r.appspot.com/contact.html";
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
